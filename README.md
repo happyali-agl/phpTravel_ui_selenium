@@ -7,23 +7,24 @@
         where
         * mvn clean --> it will delete the target folder from the project
         * mvn install -->
-                1. It will download all the remaining dependencies according to pom.xml file
-                2. It will build the project and run the 'test'
+       
+                *	It will download all the remaining dependencies according to pom.xml file
+                *	It will build the project and run the 'test'
 
 02. In testng file (here functionalTests.xml), we do setting for Execution mode :
 
-        * To run test in serial mode: <suite name="Suite" parallel="none"> or <suite name="Suite">
-        * To run test in parallel mode: <suite name="Suite" parallel="tests">
-        * To run the "classes" in parallel mode: <suite name="Suite" parallel="classes"> 
+		* 	To run test in serial mode: <suite name="Suite" parallel="none"> or <suite name="Suite">
+		* 	To run test in parallel mode: <suite name="Suite" parallel="tests">
+		* 	To run the "classes" in parallel mode: <suite name="Suite" parallel="classes"> 
 
 03. Way of running script:
 
       * To parameterize the test run:
           1.  via functionalTest.xml:
-              Pass parameter as <parameter> from testng.xml when browser is passed to script (i.e. baseClass as @parameter)
+              *		Pass parameter as <parameter> from testng.xml when browser is passed to script (i.e. baseClass as @parameter)
           2.  Via command line as mvn run:
-              To parameterize the test run if via command line:
-                Mention the location of the functionalTest.xml file to be used as below config:
+              *		To parameterize the test run if via command line:
+			Mention the location of the functionalTest.xml file to be used as below config:
                   <suiteXmlFiles>
                     <suiteXmlFile>XMLFiles/functionalTests.xml</suiteXmlFile> OR
                     <suiteXmlFile>XMLFiles/${xmlFiles}</suiteXmlFile>
@@ -32,9 +33,10 @@
 04. User WebdriverManager instead of loading project with specific webdriver.exe
       * WebDriverManager : https://github.com/bonigarcia/webdrivermanager
       
-			    * This is when you don't want to have driver.exe and manager webdriver automatically	
-				    #	for latest :  WebDriverManager.chromedriver().setup();
-				    #	for specific version: WebDriverManager.chromedriver().version("2.36")setup();
+		* This is when you don't want to have driver.exe and manager webdriver automatically
+			*	for latest :  WebDriverManager.chromedriver().setup();
+			*	for specific version: WebDriverManager.chromedriver().version("2.36")setup();
+	
 ## Pipeline for CI is implemented using CircleCI
 ======================================================================
 	
