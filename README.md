@@ -51,7 +51,11 @@
 	* Bugs identiifed during automation and exploratory testing can be found in a file at project root location as "./PHP_Travel_Bugs_Report.docx"
 
 	
-
+## Test Run Report
+======================================================================
+	
+	* The automation run report created using Extent Reporting can be found at : "./com.ui.selenium/Reports/ExtentReports"
+	
 ## Test Bench Setup with Selenium - Maven - TestNG on Windows machines
 ======================================================================
 
