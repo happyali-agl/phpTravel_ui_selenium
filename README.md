@@ -35,7 +35,13 @@
 			    * This is when you don't want to have driver.exe and manager webdriver automatically	
 				    #	for latest :  WebDriverManager.chromedriver().setup();
 				    #	for specific version: WebDriverManager.chromedriver().version("2.36")setup();
-            
+## Pipeline for CI is implemented using CircleCI
+======================================================================
+	
+	* You can find the current running pipeline at https://app.circleci.com/pipelines/github/happyali-agl/phpTravel_ui_selenium
+	* Currently it is throwing error as:
+		" org.openqa.selenium.WebDriverException: 
+			unknown error: failed to change window state to maximized, current state is normal"
 
 ## Test Bench Setup with Selenium - Maven - TestNG on Windows machines
 ======================================================================
