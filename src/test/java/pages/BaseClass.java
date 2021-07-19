@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
@@ -35,21 +36,17 @@ public class BaseClass {
 	public Actions act;
 	public static ConfigurationDataProvider config;
 	public String BrowserName;
-
+	public Dimension dimension;
+	
 	static String fileName = System.getProperty("user.dir") + "/Reports/ExtentReports/TEST-"
 			+ Helper.getCurrentDateTime() + ".html";
 	public static ExtentReports extent = ExtentManager.createInstance(fileName);
 	public static ExtentTest test;
 	public static ExtentTest parenttest;
 	public static ThreadLocal<ExtentTest> extentReport = new ThreadLocal<ExtentTest>();
-//	public static List<GalenTestInfo> objGalentestsList;
-//	public static HtmlReportBuilder htmlReportBuilder;
-//	public static GalenTestInfo objSingleGalenTest;
 
 	@BeforeSuite
 	public void setUpSuite() {
-//		objGalentestsList = new LinkedList<GalenTestInfo>();
-//		htmlReportBuilder = new HtmlReportBuilder();
 		Reporter.log("IN BEFORE SUITE Executed", true);
 	}
 
@@ -65,7 +62,10 @@ public class BaseClass {
 		config = new ConfigurationDataProvider();
 		BrowserName = browser;
 		driver = BrowserFactory.startApplication(driver, browser, config.getFromConfig("baseUrl"));
-		driver.manage().window().maximize();
+		
+		dimension = new Dimension(1260, 820);
+		driver.manage().window().setSize(dimension);
+//		driver.manage().window().maximize();
 		System.out.println("driver :" + driver);
 		Reporter.log("BEFORE CLASS - Executed", true);
 	}
@@ -103,7 +103,6 @@ public class BaseClass {
 
 	@AfterSuite
 	public void setAfterSuite() throws IOException {
-//		htmlReportBuilder.build(objGalentestsList, System.getProperty("user.dir") + "/Reports/UI_Galen_Reports");
 		Reporter.log("AFTER SUITE - Executed", true);
 	}
 }

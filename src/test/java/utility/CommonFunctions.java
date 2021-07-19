@@ -44,6 +44,7 @@ public class CommonFunctions extends BaseClass {
 			elementToClick.click();
 			Reporter.log("Element Clicked : " + key, true);
 		} catch (Exception e) {
+			Reporter.log("No Element To Click : " + key, true);
 			e.printStackTrace();
 		}
 	}
@@ -103,14 +104,14 @@ public class CommonFunctions extends BaseClass {
 				driver.findElement(By.id(config.getFromObjectRepo(key))).sendKeys(value);
 			} else if (key.endsWith("_CSS")) {
 				driver.findElement(By.cssSelector(config.getFromObjectRepo(key))).sendKeys(value);
+			} else {
+				driver.findElement(By.xpath(config.getFromObjectRepo(key))).sendKeys(value);
 			}
+			Reporter.log(key+ " :Typed Element ", true);
 		} catch (Exception e) {
+			Reporter.log("No Element To type at : " + key, true);
 			e.printStackTrace();
 		}
 	}
 	
-	public void jsClick(WebElement element) {
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0]. click();", element);
-	}
 }

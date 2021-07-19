@@ -14,9 +14,9 @@ public class ExtentManager {
         report = new ExtentReports();
         report.attachReporter(extent);
 
-        extent.config().setDocumentTitle("AEM TEST REPORT");
+        extent.config().setDocumentTitle("PHP TRAVEL TEST REPORT");
         extent.config().setTheme(Theme.DARK);
-        extent.config().setReportName("AEM AUTOMATION STATISTICS");
+        extent.config().setReportName("PHP TRAVEL AUTOMATION STATISTICS");
 		
 //		report.setSystemInfo("Executed on Browser: ", PropertiesOperations.getPropertyValueByKey("browser"));
 		report.setSystemInfo("Executed on OS: ", System.getProperty("os.name"));

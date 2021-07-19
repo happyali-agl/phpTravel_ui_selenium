@@ -1,11 +1,9 @@
 package testCases;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import teststeps.BookFlight;
 import teststeps.BookTour;
 import teststeps.Homepage;
 import teststeps.Searchpage;
@@ -24,15 +22,21 @@ public class BookTourpage_tc extends CommonFunctions {
 	}
 	
 	@Test(description = "Navigate To Tour Page", dependsOnMethods = { "loginForBookTourPage" })
-	public void navigateToTourPage() throws Throwable {		
+	public void navigateToTourPage() throws Throwable {	
 		Searchpage.navigateToHome(driver);
 		BookTour.navigateToTour(driver);
 		Reporter.log("After Navigating to Tour Tab", true);
 	}
 	
-	@Test(description = "Submitting Tour", dependsOnMethods = { "navigateToTourPage" })
-	public void submitTourPage() throws Throwable {		
-		BookTour.submitTour(driver);
+	@Test(description = "Selecting Tour", dependsOnMethods = { "navigateToTourPage" })
+	public void selectTourPage() throws Throwable {		
+		BookTour.selectTour(driver);
 		Reporter.log("After Submitting to Tour Tab", true);
 	}	
+	
+	@Test(description = "Selecting Check Date", dependsOnMethods = { "selectTourPage" })
+	public void selectTourCheckInPage() throws Throwable {		
+		BookTour.selectTourCheckIn(driver);
+		Reporter.log("After Submitting to Tour Tab", true);
+	}
 }
