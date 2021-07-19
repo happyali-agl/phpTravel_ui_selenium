@@ -44,6 +44,13 @@
 	* Currently it is throwing error as:
 		" org.openqa.selenium.WebDriverException: 
 			unknown error: failed to change window state to maximized, current state is normal"
+	
+## Bugs or Issues:
+======================================================================
+	
+	* Bugs identiifed during automation and exploratory testing can be found in a file at project root location as "./PHP_Travel_Bugs_Report.docx"
+
+	
 
 ## Test Bench Setup with Selenium - Maven - TestNG on Windows machines
 ======================================================================
